@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   loadedPosts = [];
-  constructor(private http: HttpClient) {}
+  constructor(    private http: HttpClient,    private componentFactoryResolver: ComponentFactoryResolver  ) {}
+
   ngOnInit() {}
+
   onCreatePost(postData: { title: string; content: string }) {
     this.http
       .post(
@@ -27,4 +29,10 @@ export class AppComponent implements OnInit {
   onClearPosts() {
     // Send Http request
   }
+
+
+
+
+
+
 }
