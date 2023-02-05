@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-custom-layout1',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
 
   styleUrls: ['./custom-layout1.component.css'],
 })
-export class CustomLayout1Component {}
+export class CustomLayout1Component {
+
+}

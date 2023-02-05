@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { PlaceholderDirective } from './../../shared/placeholder.directive';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService, AuthResponseData } from './auth.service';
+import {CustomLayout1Component} from 'custom-layouts/custom-layout-1/custom-layout-1.module'
 
 @Component({
   selector: 'app-login-form',
@@ -15,7 +18,7 @@ export class LoginFormComponent {
   // errorMessage: string = '';
 
   // checkCredentials() {
-  //   if (this.email === 'admin@gmail.com' && this.password === 'Admin') {
+  //   if (this.email === 'admin@gmail.com' && this.password === 'Admin1') {
   //     this.errorMessage = '';
   //   } else {
   //     this.errorMessage = 'Invalid credentials';
@@ -24,8 +27,13 @@ export class LoginFormComponent {
   isLoginMode = true;
   isLoading = false;
   error = null;
+  @ViewChild(platformBrowserDynamic) createLayout:PlaceholderDirective | undefined
 
-  constructor(private authService: AuthService, private router:Router) {}
+  constructor(
+    private authService: AuthService,
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private router: Router
+  ) {}
 
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
@@ -52,7 +60,7 @@ export class LoginFormComponent {
       (resData: any) => {
         console.log(resData);
         this.isLoading = false;
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       },
       (errorMessage: any) => {
         console.log(errorMessage);
@@ -62,5 +70,19 @@ export class LoginFormComponent {
     );
 
     form.reset();
+  }
+
+  private loadeLayout(email: string, password: string) {
+  const customLayoutFactory =
+    this.componentFactoryResolver.resolveComponentFactory(
+      CustomLayout1Component
+    );
+    const hostViewContainerRef = this.createLayout?.viewContainerRef;
+    hostViewContainerRef?.clear()
+    const componentRef =
+      hostViewContainerRef?.createComponent(
+        customLayoutFactory
+      );
+      componentRef?.instance
   }
 }

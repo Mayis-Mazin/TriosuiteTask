@@ -12,3 +12,5 @@ import { CustomLayout1Component } from './custom-layout1-component/custom-layout
   ]
 })
 export class CustomLayout1Module { }
+export { CustomLayout1Component };
+

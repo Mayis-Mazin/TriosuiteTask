@@ -11,7 +11,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CustomLayout1Module } from 'custom-layouts/custom-layout-1/custom-layout-1.module';
-import { CustomLayout2Module } from 'custom-layouts/custom-layout-2/custom-layout-2.module';
+import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { CustomLayout2Module } from 'custom-layouts/custom-layout-2/custom-layou
     LoadingSpinnerComponent,
     HeaderComponent,
     HomepageComponent,
+    PlaceholderDirective,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,6 @@ import { CustomLayout2Module } from 'custom-layouts/custom-layout-2/custom-layou
     FormsModule,
     HttpClientModule,
     CustomLayout1Module,
-    CustomLayout2Module,
   ],
   providers: [],
   bootstrap: [AppComponent],
