@@ -5,21 +5,25 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit ,OnDestroy{
-  isAuthenticated=false;
+export class HeaderComponent implements OnInit, OnDestroy {
+  isAuthenticated = false;
   private userSub!: Subscription;
-  constructor(private authService:AuthService){}
-  ngOnInit(){
-   this.userSub= this.authService.user.subscribe(user=>{
-    this.isAuthenticated=!user?false:true
-   })
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.userSub = this.authService.user.subscribe((user) => {
+      this.isAuthenticated = !user ? false : true;
+    });
   }
 
-  onLogout(){}
+  onLogout() {
+    this.authService.logout();
+  }
 
-  ngOnDestroy(){
-    this.userSub.unsubscribe()
+  ngOnDestroy() {
+    this.userSub.unsubscribe();
   }
 }
