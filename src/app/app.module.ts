@@ -10,7 +10,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PlaceholderDirective } from './shared/placeholder.directive';
-import { CustomLayoutsModule } from 'customLayouts/custom-layouts.module';
+import { CustomLayoutsModule } from 'customLayouts/layouts.module';
 
 @NgModule({
   declarations: [
