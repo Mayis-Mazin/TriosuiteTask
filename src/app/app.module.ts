@@ -5,18 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { LoginFormComponent } from './login/login-form/login-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { CustomLayout1Module } from 'custom-layouts/custom-layout-1/custom-layout-1.module';
 import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     LoginFormComponent,
 
     LoadingSpinnerComponent,
@@ -29,7 +26,6 @@ import { PlaceholderDirective } from './shared/placeholder.directive';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CustomLayout1Module,
   ],
   providers: [],
   bootstrap: [AppComponent],

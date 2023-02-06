@@ -1,4 +1,4 @@
-import { AuthService } from './../login/login-form/auth.service';
+import { AuthService } from '../login-form/auth.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
