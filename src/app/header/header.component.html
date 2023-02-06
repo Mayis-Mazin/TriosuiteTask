@@ -11,7 +11,7 @@
         <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/">About</a>
         </li>
-        <li routerLinkActive="active"  *ngIf="isAuthenticated">
+        <li routerLinkActive="active" >
           <a routerLink="/">Contact</a>
         </li>
       </ul>
@@ -29,7 +29,7 @@
 <nav class="navbar navbar-light bg-light static-top">
   <div class="container">
       <a routerLink="/" class="navbar-brand">Triosuite</a>
-          <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
+          <a style="cursor: pointer;" (click)="onLogout() "  *ngIf="isAuthenticated">Logout</a>
   </div>
 </nav>
 

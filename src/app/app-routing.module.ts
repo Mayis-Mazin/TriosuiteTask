@@ -4,7 +4,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'auth', component: LoginFormComponent },
 
   { path: 'home', component: HomepageComponent },

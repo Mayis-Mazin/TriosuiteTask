@@ -10,12 +10,12 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PlaceholderDirective } from './shared/placeholder.directive';
+import { CustomLayoutsModule } from 'customLayouts/custom-layouts.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-
     LoadingSpinnerComponent,
     HeaderComponent,
     HomepageComponent,
@@ -26,6 +26,8 @@ import { PlaceholderDirective } from './shared/placeholder.directive';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CustomLayoutsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
